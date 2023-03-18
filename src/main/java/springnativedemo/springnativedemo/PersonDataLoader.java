@@ -7,11 +7,19 @@ import org.springframework.stereotype.Component;
 @Component
 public class PersonDataLoader implements ApplicationRunner {
 
+// ------------------------------ FIELDS ------------------------------
+
     private final PersonRepository repository;
+
+// --------------------------- CONSTRUCTORS ---------------------------
 
     public PersonDataLoader(PersonRepository repository) {
         this.repository = repository;
     }
+
+// ------------------------ INTERFACE METHODS ------------------------
+
+// --------------------- Interface ApplicationRunner ---------------------
 
     @Override
     public void run(ApplicationArguments args) {
@@ -20,4 +28,5 @@ public class PersonDataLoader implements ApplicationRunner {
         person.setLastName("Native");
         repository.save(person);
     }
+
 }
