@@ -21,7 +21,7 @@ docker run --rm -p 8080:8080 docker.io/library/spring-native-demo:0.0.1-SNAPSHOT
 
 Testing out the API is simple using [httpie](https://httpie.io/)!
 
-### Creating a Person
+#### Creating a Person
 
 To create a new `Person` record, execute the following:
 
@@ -46,7 +46,7 @@ Transfer-Encoding: chunked
 }
 ```
 
-### Finding a Person
+#### Finding a Person
 
 To find an existing `Person` record, execute the following:
 
@@ -71,7 +71,7 @@ Transfer-Encoding: chunked
 }
 ```
 
-### Updating a Person
+#### Updating a Person
 
 To update an existing `Person` record, execute the following:
 
@@ -96,7 +96,7 @@ Transfer-Encoding: chunked
 }
 ```
 
-### Deleting a Person
+#### Deleting a Person
 
 To delete an existing `Person` record, execute the following:
 
