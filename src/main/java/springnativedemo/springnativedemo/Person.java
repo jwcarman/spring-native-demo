@@ -9,9 +9,17 @@ import java.util.UUID;
 @Entity
 public class Person {
     @Id
-    private String id = UUID.randomUUID().toString();
+    private String id;
     private String firstName;
     private String lastName;
+
+    public Person() {
+        this.id = UUID.randomUUID().toString();
+    }
+
+    public Person(String id) {
+        this.id = id;
+    }
 
     @Override
     public boolean equals(Object o) {
