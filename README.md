@@ -17,6 +17,29 @@ Once the image is built, you can run it using Docker:
 docker run --rm -p 8080:8080 docker.io/library/spring-native-demo:0.0.1-SNAPSHOT
 ```
 
+To see the resources consumed by this Docker container:
+
+```shell
+docker stats
+```
+
+The output should look similar to the following:
+
+```shell
+CONTAINER ID   NAME                 CPU %     MEM USAGE / LIMIT    MEM %     NET I/O           BLOCK I/O        PIDS
+6c4ded529676   awesome_fermi        0.01%     67.6MiB / 31.3GiB    0.21%     1.63kB / 746B     0B / 0B          19
+```
+
+Here, we see that our natively-built Spring Boot application is only using `67.6BiB` of memory! Let's compare that with
+a container running using a non-native Spring Boot application:
+
+```shell
+CONTAINER ID   NAME                 CPU %     MEM USAGE / LIMIT    MEM %     NET I/O           BLOCK I/O        PIDS
+b7edbc9c7a23   zealous_montalcini   0.08%     419.2MiB / 31.3GiB   1.31%     4.03kB / 2.73kB   0B / 463kB       49
+```
+
+That's quite a difference!
+
 ## Testing
 
 Testing out the API is simple using [httpie](https://httpie.io/)!
