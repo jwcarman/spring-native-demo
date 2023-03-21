@@ -1,4 +1,4 @@
-# Spring Native Demo Application
+# Spring Boot Native Image Demo
 
 A demo application to illustrate how to build and run a Spring Boot native image.
 
