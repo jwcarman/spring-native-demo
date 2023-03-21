@@ -5,8 +5,15 @@ A demo application to illustrate how to build and run a Spring Boot native image
 ## Building
 
 Using Maven, execute the following command to build the native image:
+
 ```shell
 mvn -Pnative spring-boot:build-image
+```
+
+Alternatively, to build a non-native image:
+
+```shell
+mvn spring-boot:build-image
 ```
 
 ## Running
