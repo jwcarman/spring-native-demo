@@ -17,7 +17,25 @@ Once the image is built, you can run it using Docker:
 docker run --rm -p 8080:8080 docker.io/library/spring-native-demo:0.0.1-SNAPSHOT
 ```
 
-To see the resources consumed by this Docker container:
+## Startup Time
+
+When running the natively-built Spring boot application, you should see the final line of output similar to the following:  
+
+```shell
+Started SpringNativeDemoApplication in 0.099 seconds (process running for 0.107)
+```
+
+When running as a non-native Spring Boot container, the output looks a bit different:
+
+```shell
+Started SpringNativeDemoApplication in 2.95 seconds (process running for 3.203)
+```
+
+Our application starts up 30x faster when built natively!
+
+## Memory Usage
+
+Let's examine the memory usage of our native application:
 
 ```shell
 docker stats
@@ -38,7 +56,7 @@ CONTAINER ID   NAME                 CPU %     MEM USAGE / LIMIT    MEM %     NET
 b7edbc9c7a23   zealous_montalcini   0.08%     419.2MiB / 31.3GiB   1.31%     4.03kB / 2.73kB   0B / 463kB       49
 ```
 
-That's quite a difference!
+The native application consumes only `16%` of the memory used by its non-native counterpart!
 
 ## Testing
 
