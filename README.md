@@ -1,6 +1,6 @@
 # Spring Native Demo Application
 
-A demo application to illustrate how to build and run a Spring Boot application using Spring Native.
+A demo application to illustrate how to build and run a Spring Boot native image.
 
 ## Building
 
